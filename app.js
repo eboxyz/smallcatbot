@@ -19,10 +19,7 @@ client.on("ready", () => {
 });
 
 client.on("message", (message) => {
-  if (message.content.startsWith("ping")) {
-    message.channel.send("pong!");
-  }
-  else if (message.content.startsWith(`${config.prefix}raid`)) {
+  if (message.content.startsWith(`${config.prefix}raid`)) {
       message.channel.send("@here: https://imgur.com/OqRXrBV")
   }
   else if (message.content.startsWith(`${config.prefix}server`)) {
@@ -36,14 +33,20 @@ client.on("message", (message) => {
     const smallyell = client.emojis.find("name", "smallyell")
     message.channel.send(`${smallyell} http://bfy.tw/3nV`)
   }
-  else if (message.content.startsWith("happy")) {
+  else if (message.content.startsWith(`${config.prefix}happy`)) {
     message.channel.send("https://imgur.com/K5chYtk")
   }
-  else if (message.content.startsWith("cuddle")) {
+  else if (message.content.startsWith(`${config.prefix}cuddle`)) {
     message.channel.send("https://imgur.com/HBDnuxL")
   }
-  else if (message.content.startsWith("bitchwhat")) {
+  else if (message.content.startsWith(`${config.prefix}bitchwhat`)) {
     message.channel.send("https://imgur.com/CeAOEIq")
+  }
+  else if (message.content.startsWith(`${config.prefix}messages`)) {
+    //message.channel will always refer to the current channel that this is invoked in
+    message.channel.fetchMessages()
+        .then( messages => messages.map( message => message.delete() ) )
+        .catch(console.error);
   }
 //   else if (message.content.startsWith(`${config.prefix}me`)) {
 //     message.channel.send(`You are: ${message.author.username}`)
