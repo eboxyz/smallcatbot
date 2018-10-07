@@ -21,7 +21,8 @@ client.on("ready", () => {
 const commands = "`!raid`, `!server`, `!happy`, `!cuddle`, `!bitchwhat`, `!wink`, `!nudes`, `hi smallcat`, `help me smallcat`"
 
 client.on("message", (message) => {
-console.log(message.content)
+
+console.log(message.author.username + ": " + message.content)
   if (message.content.startsWith(`${config.prefix}commands`)) {
       message.channel.send(`My current commands are: ${commands}`)
   }
