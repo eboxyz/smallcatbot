@@ -18,7 +18,13 @@ client.on("ready", () => {
   console.log("I am ready!");
 });
 
+const commands = "`!raid`, `!server`, `!happy`, `!cuddle`, `!bitchwhat`, `!wink`, `!nudes`, `hi smallcat`, `help me smallcat`"
+
 client.on("message", (message) => {
+console.log(message.content)
+  if (message.content.startsWith(`${config.prefix}commands`)) {
+      message.channel.send(`My current commands are: ${commands}`)
+  }
   if (message.content.startsWith(`${config.prefix}raid`)) {
       message.channel.send("@here: https://imgur.com/OqRXrBV")
   }
@@ -34,13 +40,19 @@ client.on("message", (message) => {
     message.channel.send(`${smallyell} http://bfy.tw/3nV`)
   }
   else if (message.content.startsWith(`${config.prefix}happy`)) {
-    message.channel.send("https://imgur.com/K5chYtk")
+    message.channel.send("https://imgur.com/VKbBiK1")
   }
   else if (message.content.startsWith(`${config.prefix}cuddle`)) {
-    message.channel.send("https://imgur.com/HBDnuxL")
+    message.channel.send("https://imgur.com/VkZGqXb")
   }
   else if (message.content.startsWith(`${config.prefix}bitchwhat`)) {
-    message.channel.send("https://imgur.com/CeAOEIq")
+    message.channel.send("https://imgur.com/jiWgckm")
+  }
+  else if (message.content.startsWith(`${config.prefix}nudes`)) {
+    message.channel.send("https://i.imgur.com/fjj9HHl.jpg")
+  }
+  else if (message.content.startsWith(`${config.prefix}wink`)) {
+      message.channel.send("https://imgur.com/Of6iJPr")
   }
   else if (message.content.startsWith(`${config.prefix}messages`)) {
     //message.channel will always refer to the current channel that this is invoked in
