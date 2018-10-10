@@ -7,6 +7,9 @@ const commands = "`!raid`, `!wrongchat`, `!banquet`, `!server`, `!happy`, `!cudd
 
 client.on("message", (message) => {
     console.log(message.author.username + ": " + message.content)
+    // if (message.content.author.username == 'sixes') {
+    //     message.channel.send('i luv u mom')
+    // }
 
     if (message.content.startsWith(`${config.prefix}commands`)) {
         message.channel.send(`My current commands are: ${commands}`)
@@ -21,7 +24,7 @@ client.on("message", (message) => {
         message.channel.send(`https://imgur.com/zeuN3ZR`)
     }
     else if (message.content.startsWith(`${config.prefix}raid`)) {
-        message.channel.send("@here: https://imgur.com/Ep26FN8")
+        message.channel.send("@here raidtime!!: https://imgur.com/Ep26FN8")
     }
     else if (message.content.startsWith(`${config.prefix}server`)) {
         message.channel.send(`This server is: ${message.guild.name}`);
@@ -68,15 +71,16 @@ raidjob1.start();
 
 const raidjob2 = new cron('0 0 21 * * *', function(){
     const guild = client.guilds.get('472829226094166034')
-    const channel = guild.channels.get('475054543022063637')
+    const channel = guild.channels.get('472829227159257099')
     channel.send("!raid")
 })
 raidjob2.start();
 
-const banquetjob = new cron('0 0 19 * * *', function(){
+const banquetjob = new cron('0 55 18 * * *', function(){
     const guild = client.guilds.get('472829226094166034')
-    const channel = guild.channels.get('475054543022063637')
-    channel.send("!raid")
+    const channel = guild.channels.get('472829227159257099')
+    channel.send("@here: banquet is in 5")
+    channel.send("!banquet")
 })
 banquetjob.start();
 
