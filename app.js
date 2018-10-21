@@ -7,9 +7,6 @@ const commands = "`!raid`, `!wrongchat`, `!banquet`, `!server`, `!happy`, `!cudd
 
 client.on("message", (message) => {
     console.log(message.author.username + ": " + message.content)
-    // if (message.content.author.username == 'sixes') {
-    //     message.channel.send('i luv u mom')
-    // }
 
     if (message.content.startsWith(`${config.prefix}commands`)) {
         message.channel.send(`My current commands are: ${commands}`)
@@ -53,34 +50,49 @@ client.on("message", (message) => {
         message.channel.send("https://imgur.com/Of6iJPr")
     }
     else if (message.content.startsWith(`${config.prefix}messages`)) {
-    //message.channel will always refer to the current channel that this is invoked in
+        //message.channel will always refer to the current channel that this is invoked in
         message.channel.fetchMessages()
-            .then( messages => messages.map( message => message.delete() ) )
+            .then(messages => messages.map(message => message.delete()))
             .catch(console.error);
     }
 });
 
-client.login(config.token).then(() => { console.log('meow!' )});
+client.login(config.token).then(() => { console.log('meow!') });
 
-const raidjob1 = new cron('0 0 13 * * *', function(){
-    const guild = client.guilds.get('472829226094166034')
-    const channel = guild.channels.get('472829227159257099')
-    channel.send("!raid")
-})
+const raidjob1 = new cron({
+    cronTime: '0 0 13 * * *',
+    onTick: function () {
+        const guild = client.guilds.get('472829226094166034')
+        const channel = guild.channels.get('472829227159257099')
+        channel.send("!raid")
+    },
+    start: true,
+    timeZone: 'America/Los_Angeles'
+});
 raidjob1.start();
 
-const raidjob2 = new cron('0 0 21 * * *', function(){
-    const guild = client.guilds.get('472829226094166034')
-    const channel = guild.channels.get('472829227159257099')
-    channel.send("!raid")
-})
+const raidjob2 = new cron({
+    cronTime: '0 0 21 * * *',
+    onTick: function () {
+        const guild = client.guilds.get('472829226094166034')
+        const channel = guild.channels.get('472829227159257099')
+        channel.send("!raid")
+    },
+    start: true,
+    timeZone: 'America/Los_Angeles'
+});
 raidjob2.start();
 
-const banquetjob = new cron('0 55 18 * * *', function(){
-    const guild = client.guilds.get('472829226094166034')
-    const channel = guild.channels.get('472829227159257099')
-    channel.send("@here: banquet is in 5")
-    channel.send("!banquet")
+const banquetjob = new cron({
+    cronTime: '0 55 18 * * *',
+    onTick: function () {
+        const guild = client.guilds.get('472829226094166034')
+        const channel = guild.channels.get('472829227159257099')
+        channel.send("@here: banquet is in 5")
+        channel.send("!banquet")
+    },
+    start: true,
+    timeZone: 'America/Los_Angeles'
 })
 banquetjob.start();
 
