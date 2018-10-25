@@ -58,6 +58,7 @@ client.on("message", (message) => {
 });
 
 client.login(config.token).then(() => { console.log('meow!') });
+client.
 
 const raidjob1 = new cron({
     cronTime: '0 0 13 * * *',
@@ -84,7 +85,7 @@ const raidjob2 = new cron({
 raidjob2.start();
 
 const banquetjob = new cron({
-    cronTime: '0 55 18 * * *',
+    cronTime: '0 25 20 * * *',
     onTick: function () {
         const guild = client.guilds.get('472829226094166034')
         const channel = guild.channels.get('472829227159257099')
