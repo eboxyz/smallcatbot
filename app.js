@@ -49,6 +49,9 @@ client.on("message", (message) => {
     else if (message.content.startsWith(`${config.prefix}wink`)) {
         message.channel.send("https://imgur.com/Of6iJPr")
     }
+    else if (message.content.startsWith(`${config.prefix}pingy`)) {
+        message.channel.send("https://imgur.com/c6V5XPw")
+    }
     else if (message.content.startsWith(`${config.prefix}messages`)) {
         //message.channel will always refer to the current channel that this is invoked in
         message.channel.fetchMessages()
@@ -58,10 +61,9 @@ client.on("message", (message) => {
 });
 
 client.login(config.token).then(() => { console.log('meow!') });
-client.
 
 const raidjob1 = new cron({
-    cronTime: '0 0 13 * * *',
+    cronTime: '0 0 12 * * *',
     onTick: function () {
         const guild = client.guilds.get('472829226094166034')
         const channel = guild.channels.get('472829227159257099')
@@ -73,7 +75,7 @@ const raidjob1 = new cron({
 raidjob1.start();
 
 const raidjob2 = new cron({
-    cronTime: '0 0 21 * * *',
+    cronTime: '0 0 20 * * *',
     onTick: function () {
         const guild = client.guilds.get('472829226094166034')
         const channel = guild.channels.get('472829227159257099')
@@ -85,7 +87,7 @@ const raidjob2 = new cron({
 raidjob2.start();
 
 const banquetjob = new cron({
-    cronTime: '0 25 20 * * *',
+    cronTime: '0 25 19 * * *',
     onTick: function () {
         const guild = client.guilds.get('472829226094166034')
         const channel = guild.channels.get('472829227159257099')
