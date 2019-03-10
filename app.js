@@ -6,7 +6,7 @@ const cron = require('cron').CronJob;
 const commands = "`!raid`, `!wrongchat`, `!banquet`, `!server`, `!happy`, `!cuddle`, `!bitchwhat`, `!wink`, `!nudes`, `hi smallcat`, `help me smallcat`"
 const membercommands = "`!6face`, `!lyreface`, `!gumface`, `!poeface`, `!toffface`, `!yerrface`, `!bonface`, `!eggface`"
 const s2membercommands = "`!6face2`, `!lyreface2`, `!gumface2`, `!poeface2`, `!toffface2`, `!kokoface`, `!awuvface`"
-const s3membercommands = "`!lyreface3`, `!gumface3`, `!poeface3`, `!toffface3`, `!greedyface3`, `!jennyface3`, `!bonerface3`, `!drface3`, `!noiseface3`"
+const s3membercommands = "`!lyreface3`, `!gumface3`, `!poeface3`, `!toffface3`, `!greedyface3`, `!jennyface3`, `!bonerface3`, `!drholyface3`, `!noiseface3`"
 
 
 client.on("message", (message) => {
