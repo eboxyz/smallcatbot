@@ -6,6 +6,8 @@ const cron = require('cron').CronJob;
 const commands = "`!raid`, `!wrongchat`, `!banquet`, `!server`, `!happy`, `!cuddle`, `!bitchwhat`, `!wink`, `!nudes`, `hi smallcat`, `help me smallcat`"
 const membercommands = "`!6face`, `!lyreface`, `!gumface`, `!poeface`, `!toffface`, `!yerrface`, `!bonface`, `!eggface`"
 const s2membercommands = "`!6face2`, `!lyreface2`, `!gumface2`, `!poeface2`, `!toffface2`, `!kokoface`, `!awuvface`"
+const s3membercommands = "`!lyreface3`, `!gumface3`, `!poeface3`, `!toffface3`, `!greedyface3`, `!jennyface3`, `!bonerface3`, `!drface3`, `!noiseface3`"
+
 
 client.on("message", (message) => {
     console.log(message.author.username + ": " + message.content)
@@ -22,11 +24,17 @@ client.on("message", (message) => {
     else if (message.content.startsWith(`${config.prefix}s2membercommands`)) {
         message.channel.send(`My current friends are: ${s2membercommands}`)
     }
+    else if (message.content.startsWith(`${config.prefix}s3membercommands`)) {
+        message.channel.send(`My current friends are: ${s3membercommands}`)
+    }
     else if (message.content.startsWith(`${config.prefix}6face2`)) {
         message.channel.send(`https://i.imgur.com/j9mmHMQ.png`)
     }
     else if (message.content.startsWith(`${config.prefix}6face`)) {
         message.channel.send(`https://imgur.com/2BxhT8K`)
+    }
+    else if (message.content.startsWith(`${config.prefix}gumface3`)) {
+        message.channel.send(`https://i.imgur.com/bwdKBT1.png`)
     }
     else if (message.content.startsWith(`${config.prefix}gumface2`)) {
         message.channel.send(`https://i.imgur.com/l2WCdGC.png`)
@@ -40,6 +48,9 @@ client.on("message", (message) => {
     else if (message.content.startsWith(`${config.prefix}eggface`)) {
         message.channel.send(`https://imgur.com/yEqTlFI`)
     }
+    else if (message.content.startsWith(`${config.prefix}toffface3`)) {
+        message.channel.send(`https://i.imgur.com/HaG9jex.png`)
+    }
     else if (message.content.startsWith(`${config.prefix}toffface2`)) {
         message.channel.send(`https://i.imgur.com/3ysfkR7.png`)
     }
@@ -49,11 +60,17 @@ client.on("message", (message) => {
     else if (message.content.startsWith(`${config.prefix}yerrface`)) {
         message.channel.send(`https://i.imgur.com/kdv6l72.png`)
     }
+    else if (message.content.startsWith(`${config.prefix}poeface3`)) {
+        message.channel.send(`https://i.imgur.com/5ssLmxZ.png`)
+    }
     else if (message.content.startsWith(`${config.prefix}poeface2`)) {
         message.channel.send(`https://i.imgur.com/HhyoBFI.png`)
     }
     else if (message.content.startsWith(`${config.prefix}poeface`)) {
         message.channel.send(`https://imgur.com/wP5OIS0`)
+    }
+    else if (message.content.startsWith(`${config.prefix}lyreface3`)) {
+        message.channel.send(`https://i.imgur.com/897C8yC.png`)
     }
     else if (message.content.startsWith(`${config.prefix}lyreface2`)) {
         message.channel.send(`https://i.imgur.com/QNckXMi.png`)
@@ -66,6 +83,21 @@ client.on("message", (message) => {
     }
     else if (message.content.startsWith(`${config.prefix}kokoface`)) {
         message.channel.send(`https://i.imgur.com/rYKBwz9.png`)
+    }
+    else if (message.content.startsWith(`${config.prefix}greedyface3`)) {
+        message.channel.send(`https://i.imgur.com/rOB7dfZ.png`)
+    }
+    else if (message.content.startsWith(`${config.prefix}jennyface3`)) {
+        message.channel.send(`https://i.imgur.com/aiUGFJe.png`)
+    }
+    else if (message.content.startsWith(`${config.prefix}drholyface3`)) {
+        message.channel.send(`https://i.imgur.com/AQ0OqPv.png`)
+    }
+    else if (message.content.startsWith(`${config.prefix}bonerface3`)) {
+        message.channel.send(`https://i.imgur.com/Ilsu0HL.png`)
+    }
+    else if (message.content.startsWith(`${config.prefix}noiseface3`)) {
+        message.channel.send(`https://i.imgur.com/8GKtquH.png`)
     }
     else if (message.content.startsWith(`${config.prefix}please`)) {
         message.channel.send(`https://imgur.com/Y4hKCnB`)
@@ -124,7 +156,7 @@ client.on('error', console.error);
 client.login(config.token).then(() => { console.log('meow!') });
 
 const raidjob1 = new cron({
-    cronTime: '0 0 12 * * *',
+    cronTime: '0 0 1 * * *',
     onTick: function () {
         const guild = client.guilds.get('472829226094166034')
         const channel = guild.channels.get('472829227159257099')
@@ -136,7 +168,7 @@ const raidjob1 = new cron({
 raidjob1.start();
 
 const raidjob2 = new cron({
-    cronTime: '0 0 20 * * *',
+    cronTime: '0 0 21 * * *',
     onTick: function () {
         const guild = client.guilds.get('472829226094166034')
         const channel = guild.channels.get('472829227159257099')
@@ -161,7 +193,7 @@ raidjob2.start();
 // banquetjob.start();
 
 const fortjob = new cron({
-    cronTime: '0 0 21 * * *',
+    cronTime: '0 0 22 * * *',
     onTick: function () {
         const guild = client.guilds.get('472829226094166034')
         const channel = guild.channels.get('472829227159257099')
