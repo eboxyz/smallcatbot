@@ -168,7 +168,7 @@ const raidjob1 = new cron({
 raidjob1.start();
 
 const raidjob2 = new cron({
-    cronTime: '0 0 21 * * *',
+    cronTime: '0 0 19 * * *',
     onTick: function () {
         const guild = client.guilds.get('472829226094166034')
         const channel = guild.channels.get('472829227159257099')
@@ -193,7 +193,7 @@ raidjob2.start();
 // banquetjob.start();
 
 const fortjob = new cron({
-    cronTime: '0 0 22 * * *',
+    cronTime: '0 0 20 * * *',
     onTick: function () {
         const guild = client.guilds.get('472829226094166034')
         const channel = guild.channels.get('472829227159257099')
