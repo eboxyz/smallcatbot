@@ -156,7 +156,7 @@ client.on('error', console.error);
 client.login(config.token).then(() => { console.log('meow!') });
 
 const raidjob1 = new cron({
-    cronTime: '0 0 13 * * *',
+    cronTime: '0 0 11 * * *',
     onTick: function () {
         const guild = client.guilds.get('472829226094166034')
         const channel = guild.channels.get('472829227159257099')
