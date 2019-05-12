@@ -3,7 +3,7 @@ const client = new Discord.Client();
 const config = require('./config');
 const cron = require('cron').CronJob;
 
-const commands = "`!raid`, `!wrongchat`, `!banquet`, `!server`, `!happy`, `!cuddle`, `!bitchwhat`, `!wink`, `!nudes`, `hi smallcat`, `help me smallcat`"
+const commands = "`!raid`, `!wrongchat`, `!banquet`, `!server`, `!happy`, `!cuddle`, `!bitchwhat`, `!membercommands`, `!wink`, `!nudes`, `hi smallcat`, `help me smallcat`"
 const members = "6, lyre, gum, bon, egg, toff, yerr, poe, awuv, koko, greedy, jenny, boner, noise, kong, carmen"
 const faces = new Map();
 faces.set("6", [1, 2, 4]);
@@ -24,6 +24,50 @@ faces.set("kong", [4]);
 faces.set("carmen", [4]);
 faces.set("rin", [4]);
 
+
+// make table with this: https://www.tablesgenerator.com/text_tables#
+const memberstable = `
+\`\`\`
++--------+---+---+---+---+
+|        | 1 | 2 | 3 | 4 |
++--------+---+---+---+---+
+| 6      | ✓ | ✓ |   | ✓ |
++--------+---+---+---+---+
+| lyre   | ✓ | ✓ | ✓ | ✓ |
++--------+---+---+---+---+
+| gum    | ✓ | ✓ | ✓ | ✓ |
++--------+---+---+---+---+
+| bon    | ✓ |   |   |   |
++--------+---+---+---+---+
+| egg    | ✓ |   |   |   |
++--------+---+---+---+---+
+| toff   | ✓ | ✓ | ✓ |   |
++--------+---+---+---+---+
+| yerr   | ✓ |   |   |   |
++--------+---+---+---+---+
+| poe    | ✓ | ✓ | ✓ |   |
++--------+---+---+---+---+
+| awuv   | ✓ |   |   | ✓ |
++--------+---+---+---+---+
+| koko   | ✓ |   |   |   |
++--------+---+---+---+---+
+| greedy |   |   | ✓ |   |
++--------+---+---+---+---+
+| jenny  |   |   | ✓ | ✓ |
++--------+---+---+---+---+
+| boner  |   |   | ✓ | ✓ |
++--------+---+---+---+---+
+| noise  |   |   | ✓ | ✓ |
++--------+---+---+---+---+
+| kong   |   |   |   | ✓ |
++--------+---+---+---+---+
+| carmen |   |   |   | ✓ |
++--------+---+---+---+---+
+| rin    |   |   |   | ✓ |
++--------+---+---+---+---+
+\`\`\`
+`
+
 client.on("message", (message) => {
     console.log(message.author.username + ": " + message.content)
 
@@ -42,9 +86,9 @@ client.on("message", (message) => {
         content = returnFaces(name);
         message.channel.send(content);
     }
-    // else if (message.content.startsWith(`${config.prefix}membercommands`)) {
-    //     message.channel.send(`My current friends are:${membercommands}`)
-    // }
+    else if (message.content.startsWith(`${config.prefix}membercommands`)) {
+        message.channel.send(`${memberstable}`)
+    }
     else if (message.content.startsWith(`${config.prefix}6face1`)) {
         message.channel.send(`https://imgur.com/2BxhT8K`)
     }
