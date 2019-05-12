@@ -4,50 +4,25 @@ const config = require('./config');
 const cron = require('cron').CronJob;
 
 const commands = "`!raid`, `!wrongchat`, `!banquet`, `!server`, `!happy`, `!cuddle`, `!bitchwhat`, `!wink`, `!nudes`, `hi smallcat`, `help me smallcat`"
-const membercommands = `
-+ --------+ --- +--- +--- +--- +\
-| user   |   | 2  | 3 | 4 |\
-+--------+ --- +--- +--- +--- +\
-| 6      | ✓ | ✓ |   | ✓ |\
-+--------+ --- +--- +--- +--- +\
-| lyre   | ✓ | ✓ | ✓ | ✓ |\
-+--------+ --- +--- +--- +--- +\
-| gum    | ✓ | ✓ | ✓ | ✓ |\
-+--------+ --- +--- +--- +--- +\
-| bon    | ✓ |   |   |   |\
-+--------+ --- +--- +--- +--- +\
-| egg    | ✓ |   |   |   |\
-+--------+ --- +--- +--- +--- +\
-| toff   | ✓ | ✓ | ✓ |   |\
-+--------+ --- +--- +--- +--- +\
-| yerr   | ✓ |   |   |   |\
-+--------+ --- +--- +--- +--- +\
-| poe    | ✓ | ✓ | ✓ |   |\
-+--------+ --- +--- +--- +--- +\
-| awuv   | ✓ |   |   | ✓ |\
-+--------+ --- +--- +--- +--- +\
-| koko   | ✓ |   |   |   |\
-+--------+ --- +--- +--- +--- +\
-| greedy |   |   | ✓ |   |\
-+--------+ --- +--- +--- +--- +\
-| jenny  |   |   | ✓ | ✓ |\
-+--------+ --- +--- +--- +--- +\
-| boner  |   |   | ✓ | ✓ |\
-+--------+ --- +--- +--- +--- +\
-| noise  |   |   | ✓ | ✓ |\
-+--------+ --- +--- +--- +--- +\
-| kong   |   |   |   | ✓ |\
-+--------+ --- +--- +--- +--- +\
-| carmen |   |   |   | ✓ |\
-+--------+ --- +--- +--- +--- +\
-| rin    |   |   |   | ✓ |\
-+--------+ --- +--- +--- +--- +\
-
-to use a command, use !{user}face{num}
-`
-const s2membercommands = "`!6face2`, `!lyreface2`, `!gumface2`, `!poeface2`, `!toffface2`, `!kokoface`, `!awuvface`"
-const s3membercommands = "`!lyreface3`, `!gumface3`, `!poeface3`, `!toffface3`, `!greedyface3`, `!jennyface3`, `!bonerface3`, `!drholyface3`, `!noiseface3`"
-
+const members = "6, lyre, gum, bon, egg, toff, yerr, poe, awuv, koko, greedy, jenny, boner, noise, kong, carmen"
+const faces = new Map();
+faces.set("6", [1, 2, 4]);
+faces.set("lyre", [1, 2, 3, 4]);
+faces.set("gum", [1, 2, 3, 4]);
+faces.set("bon", [1]);
+faces.set("egg", [1]);
+faces.set("toff", [1, 2, 3]);
+faces.set("yerr", [1]);
+faces.set("poe", [1, 2, 3]);
+faces.set("awuv", [1, 4]);
+faces.set("koko", [1]);
+faces.set("greedy", [3]);
+faces.set("jenny", [3, 4]);
+faces.set("boner", [3, 4]);
+faces.set("noise", [3, 4]);
+faces.set("kong", [4]);
+faces.set("carmen", [4]);
+faces.set("rin", [4]);
 
 client.on("message", (message) => {
     console.log(message.author.username + ": " + message.content)
@@ -58,16 +33,19 @@ client.on("message", (message) => {
     else if (message.content.startsWith(`${config.prefix}smallcat play despacito`)) {
         message.channel.send(`https://open.spotify.com/track/0zmOzthR1eSlpN0IMwzXyV?si=XZhBwiuaRjWRTDbC801znQ`)
     }
-    else if (message.content.startsWith(`${config.prefix}membercommands`)) {
-        message.channel.send(`My current friends are: ${membercommands}`)
+    else if (message.content.startsWith(`${config.prefix}members`)) {
+        message.channel.send(`Members available: ${members}`)
     }
-    else if (message.content.startsWith(`${config.prefix}s2membercommands`)) {
-        message.channel.send(`My current friends are: ${s2membercommands}`)
+    else if (message.content.startsWith(`${config.prefix}checkface:`)) {
+        s = message.content.split(':');
+        name = s[1].toString().trim("");
+        content = returnFaces(name);
+        message.channel.send(content);
     }
-    else if (message.content.startsWith(`${config.prefix}s3membercommands`)) {
-        message.channel.send(`My current friends are: ${s3membercommands}`)
-    }
-    else if (message.content.startsWith(`${config.prefix}6face`)) {
+    // else if (message.content.startsWith(`${config.prefix}membercommands`)) {
+    //     message.channel.send(`My current friends are:${membercommands}`)
+    // }
+    else if (message.content.startsWith(`${config.prefix}6face1`)) {
         message.channel.send(`https://imgur.com/2BxhT8K`)
     }
     else if (message.content.startsWith(`${config.prefix}6face4`)) {
@@ -76,7 +54,7 @@ client.on("message", (message) => {
     else if (message.content.startsWith(`${config.prefix}6face2`)) {
         message.channel.send(`https://i.imgur.com/j9mmHMQ.png`)
     }
-    else if (message.content.startsWith(`${config.prefix}gumface`)) {
+    else if (message.content.startsWith(`${config.prefix}gumface1`)) {
         message.channel.send(`https://imgur.com/yH3v2tk`)
     }
     else if (message.content.startsWith(`${config.prefix}gumface4`)) {
@@ -88,13 +66,13 @@ client.on("message", (message) => {
     else if (message.content.startsWith(`${config.prefix}gumface2`)) {
         message.channel.send(`https://i.imgur.com/l2WCdGC.png`)
     }
-    else if (message.content.startsWith(`${config.prefix}bonface`)) {
+    else if (message.content.startsWith(`${config.prefix}bonface1`)) {
         message.channel.send(`https://imgur.com/7kyV0VE`)
     }
-    else if (message.content.startsWith(`${config.prefix}eggface`)) {
+    else if (message.content.startsWith(`${config.prefix}eggface1`)) {
         message.channel.send(`https://imgur.com/yEqTlFI`)
     }
-    else if (message.content.startsWith(`${config.prefix}toffface`)) {
+    else if (message.content.startsWith(`${config.prefix}toffface1`)) {
         message.channel.send(`https://imgur.com/4n7TGE8`)
     }
     else if (message.content.startsWith(`${config.prefix}toffface3`)) {
@@ -103,10 +81,10 @@ client.on("message", (message) => {
     else if (message.content.startsWith(`${config.prefix}toffface2`)) {
         message.channel.send(`https://i.imgur.com/3ysfkR7.png`)
     }
-    else if (message.content.startsWith(`${config.prefix}yerrface`)) {
+    else if (message.content.startsWith(`${config.prefix}yerrface1`)) {
         message.channel.send(`https://i.imgur.com/kdv6l72.png`)
     }
-    else if (message.content.startsWith(`${config.prefix}poeface`)) {
+    else if (message.content.startsWith(`${config.prefix}poeface1`)) {
         message.channel.send(`https://imgur.com/wP5OIS0`)
     }
     else if (message.content.startsWith(`${config.prefix}poeface3`)) {
@@ -115,7 +93,7 @@ client.on("message", (message) => {
     else if (message.content.startsWith(`${config.prefix}poeface2`)) {
         message.channel.send(`https://i.imgur.com/HhyoBFI.png`)
     }
-    else if (message.content.startsWith(`${config.prefix}lyreface`)) {
+    else if (message.content.startsWith(`${config.prefix}lyreface1`)) {
         message.channel.send(`https://imgur.com/E9riSg3`)
     }
     else if (message.content.startsWith(`${config.prefix}lyreface4`)) {
@@ -130,10 +108,10 @@ client.on("message", (message) => {
     else if (message.content.startsWith(`${config.prefix}awuvface4`)) {
         message.channel.send(`https://i.imgur.com/i90UPeE.png`)
     }
-    else if (message.content.startsWith(`${config.prefix}awuvface`)) {
+    else if (message.content.startsWith(`${config.prefix}awuvface1`)) {
         message.channel.send(`https://i.imgur.com/A4wgvry.png`)
     }
-    else if (message.content.startsWith(`${config.prefix}kokoface`)) {
+    else if (message.content.startsWith(`${config.prefix}kokoface1`)) {
         message.channel.send(`https://i.imgur.com/rYKBwz9.png`)
     }
     else if (message.content.startsWith(`${config.prefix}greedyface3`)) {
@@ -175,9 +153,6 @@ client.on("message", (message) => {
     else if (message.content.startsWith(`${config.prefix}wrongchat`)) {
         message.channel.send(`https://imgur.com/CLD8XXW`)
     }
-    // else if (message.content.startsWith(`${config.prefix}banquet`)) {
-    //     message.channel.send(`https://imgur.com/zeuN3ZR`)
-    // }
     else if (message.content.startsWith(`${config.prefix}fort`)) {
         message.channel.send(`https://imgur.com/ozUPuNE`)
     }
@@ -278,3 +253,13 @@ fortjob.start();
 console.log('raidjob1 is running?', raidjob1.running)
 console.log('raidjob2 is running?', raidjob2.running)
 console.log('fortnitejob is running?', fortjob.running)
+
+function returnFaces(s) {
+    f = faces.get(s)
+    let command = `Available emotes for user ${s}: `
+    for (i = 0; i < f.length; i++) {
+        face = s + "face" + f[i] + " "
+        command += face
+    }
+    return command
+}
