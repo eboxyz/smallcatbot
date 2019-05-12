@@ -27,11 +27,17 @@ client.on("message", (message) => {
     else if (message.content.startsWith(`${config.prefix}s3membercommands`)) {
         message.channel.send(`My current friends are: ${s3membercommands}`)
     }
+    else if (message.content.startsWith(`${config.prefix}6face4`)) {
+        message.channel.send(`https://i.imgur.com/994AwO7.png`)
+    }
     else if (message.content.startsWith(`${config.prefix}6face2`)) {
         message.channel.send(`https://i.imgur.com/j9mmHMQ.png`)
     }
     else if (message.content.startsWith(`${config.prefix}6face`)) {
         message.channel.send(`https://imgur.com/2BxhT8K`)
+    }
+    else if (message.content.startsWith(`${config.prefix}gumface4`)) {
+        message.channel.send(`https://i.imgur.com/OyGdir2.png`)
     }
     else if (message.content.startsWith(`${config.prefix}gumface3`)) {
         message.channel.send(`https://i.imgur.com/bwdKBT1.png`)
@@ -69,6 +75,9 @@ client.on("message", (message) => {
     else if (message.content.startsWith(`${config.prefix}poeface`)) {
         message.channel.send(`https://imgur.com/wP5OIS0`)
     }
+    else if (message.content.startsWith(`${config.prefix}lyreface4`)) {
+        message.channel.send(`https://i.imgur.com/DaVdqJi.png`)
+    }
     else if (message.content.startsWith(`${config.prefix}lyreface3`)) {
         message.channel.send(`https://i.imgur.com/897C8yC.png`)
     }
@@ -77,6 +86,9 @@ client.on("message", (message) => {
     }
     else if (message.content.startsWith(`${config.prefix}lyreface`)) {
         message.channel.send(`https://imgur.com/E9riSg3`)
+    }
+    else if (message.content.startsWith(`${config.prefix}awuvface4`)) {
+        message.channel.send(`https://i.imgur.com/i90UPeE.png`)
     }
     else if (message.content.startsWith(`${config.prefix}awuvface`)) {
         message.channel.send(`https://i.imgur.com/A4wgvry.png`)
@@ -87,17 +99,35 @@ client.on("message", (message) => {
     else if (message.content.startsWith(`${config.prefix}greedyface3`)) {
         message.channel.send(`https://i.imgur.com/rOB7dfZ.png`)
     }
+    else if (message.content.startsWith(`${config.prefix}jennyface4`)) {
+        message.channel.send(`https://i.imgur.com/sK9ZYdl.png`)
+    }
     else if (message.content.startsWith(`${config.prefix}jennyface3`)) {
         message.channel.send(`https://i.imgur.com/aiUGFJe.png`)
     }
     else if (message.content.startsWith(`${config.prefix}drholyface3`)) {
         message.channel.send(`https://i.imgur.com/AQ0OqPv.png`)
     }
+    else if (message.content.startsWith(`${config.prefix}bonerface4`)) {
+        message.channel.send(`https://i.imgur.com/m5znUEf.png`)
+    }
     else if (message.content.startsWith(`${config.prefix}bonerface3`)) {
         message.channel.send(`https://i.imgur.com/Ilsu0HL.png`)
     }
+    else if (message.content.startsWith(`${config.prefix}noiseface4`)) {
+        message.channel.send(`https://i.imgur.com/HRtp9vg.png`)
+    }
     else if (message.content.startsWith(`${config.prefix}noiseface3`)) {
         message.channel.send(`https://i.imgur.com/8GKtquH.png`)
+    }
+    else if (message.content.startsWith(`${config.prefix}kongface4`)) {
+        message.channel.send(`https://i.imgur.com/qjL66aZ.png`)
+    }
+    else if (message.content.startsWith(`${config.prefix}carmenface4`)) {
+        message.channel.send(`https://i.imgur.com/t5nI58N.png`)
+    }
+    else if (message.content.startsWith(`${config.prefix}rinface4`)) {
+        message.channel.send(`https://i.imgur.com/FQwsCfx.png`)
     }
     else if (message.content.startsWith(`${config.prefix}please`)) {
         message.channel.send(`https://imgur.com/Y4hKCnB`)
