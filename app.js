@@ -4,7 +4,47 @@ const config = require('./config');
 const cron = require('cron').CronJob;
 
 const commands = "`!raid`, `!wrongchat`, `!banquet`, `!server`, `!happy`, `!cuddle`, `!bitchwhat`, `!wink`, `!nudes`, `hi smallcat`, `help me smallcat`"
-const membercommands = "`!6face`, `!lyreface`, `!gumface`, `!poeface`, `!toffface`, `!yerrface`, `!bonface`, `!eggface`"
+const membercommands = `
++ --------+ --- +--- +--- +--- +
+| user   |   | 2  | 3 | 4 |
++--------+ --- +--- +--- +--- +
+| 6      | ✓ | ✓ |   | ✓ |
++--------+ --- +--- +--- +--- +
+| lyre   | ✓ | ✓ | ✓ | ✓ |
++--------+ --- +--- +--- +--- +
+| gum    | ✓ | ✓ | ✓ | ✓ |
++--------+ --- +--- +--- +--- +
+| bon    | ✓ |   |   |   |
++--------+ --- +--- +--- +--- +
+| egg    | ✓ |   |   |   |
++--------+ --- +--- +--- +--- +
+| toff   | ✓ | ✓ | ✓ |   |
++--------+ --- +--- +--- +--- +
+| yerr   | ✓ |   |   |   |
++--------+ --- +--- +--- +--- +
+| poe    | ✓ | ✓ | ✓ |   |
++--------+ --- +--- +--- +--- +
+| awuv   | ✓ |   |   | ✓ |
++--------+ --- +--- +--- +--- +
+| koko   | ✓ |   |   |   |
++--------+ --- +--- +--- +--- +
+| greedy |   |   | ✓ |   |
++--------+ --- +--- +--- +--- +
+| jenny  |   |   | ✓ | ✓ |
++--------+ --- +--- +--- +--- +
+| boner  |   |   | ✓ | ✓ |
++--------+ --- +--- +--- +--- +
+| noise  |   |   | ✓ | ✓ |
++--------+ --- +--- +--- +--- +
+| kong   |   |   |   | ✓ |
++--------+ --- +--- +--- +--- +
+| carmen |   |   |   | ✓ |
++--------+ --- +--- +--- +--- +
+| rin    |   |   |   | ✓ |
++--------+ --- +--- +--- +--- +
+
+to use a command, use !{user}face{num}
+`
 const s2membercommands = "`!6face2`, `!lyreface2`, `!gumface2`, `!poeface2`, `!toffface2`, `!kokoface`, `!awuvface`"
 const s3membercommands = "`!lyreface3`, `!gumface3`, `!poeface3`, `!toffface3`, `!greedyface3`, `!jennyface3`, `!bonerface3`, `!drholyface3`, `!noiseface3`"
 
@@ -27,14 +67,17 @@ client.on("message", (message) => {
     else if (message.content.startsWith(`${config.prefix}s3membercommands`)) {
         message.channel.send(`My current friends are: ${s3membercommands}`)
     }
+    else if (message.content.startsWith(`${config.prefix}6face`)) {
+        message.channel.send(`https://imgur.com/2BxhT8K`)
+    }
     else if (message.content.startsWith(`${config.prefix}6face4`)) {
         message.channel.send(`https://i.imgur.com/994AwO7.png`)
     }
     else if (message.content.startsWith(`${config.prefix}6face2`)) {
         message.channel.send(`https://i.imgur.com/j9mmHMQ.png`)
     }
-    else if (message.content.startsWith(`${config.prefix}6face`)) {
-        message.channel.send(`https://imgur.com/2BxhT8K`)
+    else if (message.content.startsWith(`${config.prefix}gumface`)) {
+        message.channel.send(`https://imgur.com/yH3v2tk`)
     }
     else if (message.content.startsWith(`${config.prefix}gumface4`)) {
         message.channel.send(`https://i.imgur.com/OyGdir2.png`)
@@ -45,14 +88,14 @@ client.on("message", (message) => {
     else if (message.content.startsWith(`${config.prefix}gumface2`)) {
         message.channel.send(`https://i.imgur.com/l2WCdGC.png`)
     }
-    else if (message.content.startsWith(`${config.prefix}gumface`)) {
-        message.channel.send(`https://imgur.com/yH3v2tk`)
-    }
     else if (message.content.startsWith(`${config.prefix}bonface`)) {
         message.channel.send(`https://imgur.com/7kyV0VE`)
     }
     else if (message.content.startsWith(`${config.prefix}eggface`)) {
         message.channel.send(`https://imgur.com/yEqTlFI`)
+    }
+    else if (message.content.startsWith(`${config.prefix}toffface`)) {
+        message.channel.send(`https://imgur.com/4n7TGE8`)
     }
     else if (message.content.startsWith(`${config.prefix}toffface3`)) {
         message.channel.send(`https://i.imgur.com/HaG9jex.png`)
@@ -60,11 +103,11 @@ client.on("message", (message) => {
     else if (message.content.startsWith(`${config.prefix}toffface2`)) {
         message.channel.send(`https://i.imgur.com/3ysfkR7.png`)
     }
-    else if (message.content.startsWith(`${config.prefix}toffface`)) {
-        message.channel.send(`https://imgur.com/4n7TGE8`)
-    }
     else if (message.content.startsWith(`${config.prefix}yerrface`)) {
         message.channel.send(`https://i.imgur.com/kdv6l72.png`)
+    }
+    else if (message.content.startsWith(`${config.prefix}poeface`)) {
+        message.channel.send(`https://imgur.com/wP5OIS0`)
     }
     else if (message.content.startsWith(`${config.prefix}poeface3`)) {
         message.channel.send(`https://i.imgur.com/5ssLmxZ.png`)
@@ -72,8 +115,8 @@ client.on("message", (message) => {
     else if (message.content.startsWith(`${config.prefix}poeface2`)) {
         message.channel.send(`https://i.imgur.com/HhyoBFI.png`)
     }
-    else if (message.content.startsWith(`${config.prefix}poeface`)) {
-        message.channel.send(`https://imgur.com/wP5OIS0`)
+    else if (message.content.startsWith(`${config.prefix}lyreface`)) {
+        message.channel.send(`https://imgur.com/E9riSg3`)
     }
     else if (message.content.startsWith(`${config.prefix}lyreface4`)) {
         message.channel.send(`https://i.imgur.com/DaVdqJi.png`)
@@ -83,9 +126,6 @@ client.on("message", (message) => {
     }
     else if (message.content.startsWith(`${config.prefix}lyreface2`)) {
         message.channel.send(`https://i.imgur.com/QNckXMi.png`)
-    }
-    else if (message.content.startsWith(`${config.prefix}lyreface`)) {
-        message.channel.send(`https://imgur.com/E9riSg3`)
     }
     else if (message.content.startsWith(`${config.prefix}awuvface4`)) {
         message.channel.send(`https://i.imgur.com/i90UPeE.png`)
@@ -114,11 +154,11 @@ client.on("message", (message) => {
     else if (message.content.startsWith(`${config.prefix}bonerface3`)) {
         message.channel.send(`https://i.imgur.com/Ilsu0HL.png`)
     }
-    else if (message.content.startsWith(`${config.prefix}noiseface4`)) {
-        message.channel.send(`https://i.imgur.com/HRtp9vg.png`)
-    }
     else if (message.content.startsWith(`${config.prefix}noiseface3`)) {
         message.channel.send(`https://i.imgur.com/8GKtquH.png`)
+    }
+    else if (message.content.startsWith(`${config.prefix}noiseface4`)) {
+        message.channel.send(`https://i.imgur.com/HRtp9vg.png`)
     }
     else if (message.content.startsWith(`${config.prefix}kongface4`)) {
         message.channel.send(`https://i.imgur.com/qjL66aZ.png`)
