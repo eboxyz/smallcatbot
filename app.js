@@ -28,43 +28,43 @@ faces.set("rin", [4]);
 // make table with this: https://www.tablesgenerator.com/text_tables#
 const memberstable = `
 \`\`\`
++--------+---+---+---+---+---+
+|        | 1 | 2 | 3 | 4 | 5 |
 +--------+---+---+---+---+
-|        | 1 | 2 | 3 | 4 |
-+--------+---+---+---+---+
-| 6      | ✓ | ✓ |   | ✓ |
-+--------+---+---+---+---+
-| lyre   | ✓ | ✓ | ✓ | ✓ |
-+--------+---+---+---+---+
-| gum    | ✓ | ✓ | ✓ | ✓ |
-+--------+---+---+---+---+
-| bon    | ✓ |   |   |   |
-+--------+---+---+---+---+
-| egg    | ✓ |   |   |   |
-+--------+---+---+---+---+
-| toff   | ✓ | ✓ | ✓ |   |
-+--------+---+---+---+---+
-| yerr   | ✓ |   |   |   |
-+--------+---+---+---+---+
-| poe    | ✓ | ✓ | ✓ |   |
-+--------+---+---+---+---+
-| awuv   | ✓ |   |   | ✓ |
-+--------+---+---+---+---+
-| koko   | ✓ |   |   |   |
-+--------+---+---+---+---+
-| greedy |   |   | ✓ |   |
-+--------+---+---+---+---+
-| jenny  |   |   | ✓ | ✓ |
-+--------+---+---+---+---+
-| boner  |   |   | ✓ | ✓ |
-+--------+---+---+---+---+
-| noise  |   |   | ✓ | ✓ |
-+--------+---+---+---+---+
-| kong   |   |   |   | ✓ |
-+--------+---+---+---+---+
-| carmen |   |   |   | ✓ |
-+--------+---+---+---+---+
-| rin    |   |   |   | ✓ |
-+--------+---+---+---+---+
+| 6      | ✓ | ✓ |   | ✓ | ✓ |
++--------+---+---+---+---+---+
+| lyre   | ✓ | ✓ | ✓ | ✓ | ✓ |
++--------+---+---+---+---+---+
+| gum    | ✓ | ✓ | ✓ | ✓ | ✓ |
++--------+---+---+---+---+---+
+| bon    | ✓ |   |   |   |   |
++--------+---+---+---+---+---+
+| egg    | ✓ |   |   |   |   |
++--------+---+---+---+---+---+
+| toff   | ✓ | ✓ | ✓ |   |   |
++--------+---+---+---+---+---+
+| yerr   | ✓ |   |   |   |   |
++--------+---+---+---+---+---+
+| poe    | ✓ | ✓ | ✓ |   | ✓ |
++--------+---+---+---+---+---+
+| awuv   | ✓ |   |   | ✓ | ✓ |
++--------+---+---+---+---+---+
+| koko   | ✓ |   |   |   |   |
++--------+---+---+---+---+---+
+| greedy |   |   | ✓ |   |   |
++--------+---+---+---+---+---+
+| jenny  |   |   | ✓ | ✓ | ✓ |
++--------+---+---+---+---+---+
+| boner  |   |   | ✓ | ✓ | ✓ |
++--------+---+---+---+---+---+
+| noise  |   |   | ✓ | ✓ | ✓ |
++--------+---+---+---+---+---+
+| kong   |   |   |   | ✓ |   |
++--------+---+---+---+---+---+
+| carmen |   |   |   | ✓ |   |
++--------+---+---+---+---+---+
+| rin    |   |   |   | ✓ |   |
++--------+---+---+---+---+---+
 \`\`\`
 `
 
@@ -92,6 +92,9 @@ client.on("message", (message) => {
     else if (message.content.startsWith(`${config.prefix}6face1`)) {
         message.channel.send(`https://imgur.com/2BxhT8K`)
     }
+    else if (message.content.startsWith(`${config.prefix}6face5`)) {
+        message.channel.send(`https://i.imgur.com/iocSI7u.png`)
+    }
     else if (message.content.startsWith(`${config.prefix}6face4`)) {
         message.channel.send(`https://i.imgur.com/994AwO7.png`)
     }
@@ -100,6 +103,9 @@ client.on("message", (message) => {
     }
     else if (message.content.startsWith(`${config.prefix}gumface1`)) {
         message.channel.send(`https://imgur.com/yH3v2tk`)
+    }
+    else if (message.content.startsWith(`${config.prefix}gumface5`)) {
+        message.channel.send(`https://i.imgur.com/RTeDsTC.png`)
     }
     else if (message.content.startsWith(`${config.prefix}gumface4`)) {
         message.channel.send(`https://i.imgur.com/OyGdir2.png`)
@@ -131,6 +137,9 @@ client.on("message", (message) => {
     else if (message.content.startsWith(`${config.prefix}poeface1`)) {
         message.channel.send(`https://imgur.com/wP5OIS0`)
     }
+    else if (message.content.startsWith(`${config.prefix}poeface5`)) {
+        message.channel.send(`https://i.imgur.com/blu546W.png`)
+    }
     else if (message.content.startsWith(`${config.prefix}poeface3`)) {
         message.channel.send(`https://i.imgur.com/5ssLmxZ.png`)
     }
@@ -140,6 +149,9 @@ client.on("message", (message) => {
     else if (message.content.startsWith(`${config.prefix}lyreface1`)) {
         message.channel.send(`https://imgur.com/E9riSg3`)
     }
+    else if (message.content.startsWith(`${config.prefix}lyreface5`)) {
+        message.channel.send(`https://i.imgur.com/R7vI7V2.png`)
+    }
     else if (message.content.startsWith(`${config.prefix}lyreface4`)) {
         message.channel.send(`https://i.imgur.com/DaVdqJi.png`)
     }
@@ -148,6 +160,9 @@ client.on("message", (message) => {
     }
     else if (message.content.startsWith(`${config.prefix}lyreface2`)) {
         message.channel.send(`https://i.imgur.com/QNckXMi.png`)
+    }
+    else if (message.content.startsWith(`${config.prefix}awuvface5`)) {
+        message.channel.send(`https://i.imgur.com/iocSI7u.png`)
     }
     else if (message.content.startsWith(`${config.prefix}awuvface4`)) {
         message.channel.send(`https://i.imgur.com/i90UPeE.png`)
@@ -161,6 +176,9 @@ client.on("message", (message) => {
     else if (message.content.startsWith(`${config.prefix}greedyface3`)) {
         message.channel.send(`https://i.imgur.com/rOB7dfZ.png`)
     }
+    else if (message.content.startsWith(`${config.prefix}jennyface5`)) {
+        message.channel.send(`https://i.imgur.com/KRrSRI7.png`)
+    }
     else if (message.content.startsWith(`${config.prefix}jennyface4`)) {
         message.channel.send(`https://i.imgur.com/sK9ZYdl.png`)
     }
@@ -170,17 +188,23 @@ client.on("message", (message) => {
     else if (message.content.startsWith(`${config.prefix}drholyface3`)) {
         message.channel.send(`https://i.imgur.com/AQ0OqPv.png`)
     }
+    else if (message.content.startsWith(`${config.prefix}bonerface5`)) {
+        message.channel.send(`https://i.imgur.com/j4LJ4SQ.png`)
+    }
     else if (message.content.startsWith(`${config.prefix}bonerface4`)) {
         message.channel.send(`https://i.imgur.com/m5znUEf.png`)
     }
     else if (message.content.startsWith(`${config.prefix}bonerface3`)) {
         message.channel.send(`https://i.imgur.com/Ilsu0HL.png`)
     }
-    else if (message.content.startsWith(`${config.prefix}noiseface3`)) {
-        message.channel.send(`https://i.imgur.com/8GKtquH.png`)
+    else if (message.content.startsWith(`${config.prefix}noiseface5`)) {
+        message.channel.send(`https://i.imgur.com/3M8Q6qA.png`)
     }
     else if (message.content.startsWith(`${config.prefix}noiseface4`)) {
         message.channel.send(`https://i.imgur.com/HRtp9vg.png`)
+    }
+    else if (message.content.startsWith(`${config.prefix}noiseface3`)) {
+        message.channel.send(`https://i.imgur.com/8GKtquH.png`)
     }
     else if (message.content.startsWith(`${config.prefix}kongface4`)) {
         message.channel.send(`https://i.imgur.com/qjL66aZ.png`)
